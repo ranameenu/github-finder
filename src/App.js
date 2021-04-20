@@ -4,10 +4,18 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>Hello React</h1>
+      // JSX TO RENDER
+      <div className="app">
+        <h1>HELLO REACT</h1>
       </div>
     );
+
+    // PURE JS TO RENDER
+    // React.createElement(
+    //   'div',
+    //   { className: 'App' },
+    //   React.createElement('h1', null, 'hello react')
+    // );
   }
 }
 
