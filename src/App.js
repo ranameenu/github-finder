@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  month = () => 'April';
   render() {
+    const name = 'John Doe';
+    const foo = () => 'Bar';
+    const loading = false;
+    const showname = true;
+
     return (
-      // JSX TO RENDER
       <div className="app">
-        <h1>HELLO REACT</h1>
+        {loading ? <h1>Loading...</h1> : showname && <h4>Hi I'm {name}</h4>}
       </div>
     );
-
-    // PURE JS TO RENDER
-    // React.createElement(
-    //   'div',
-    //   { className: 'App' },
-    //   React.createElement('h1', null, 'hello react')
-    // );
   }
 }
 
