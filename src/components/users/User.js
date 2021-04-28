@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import Repos from '../repos/Repos';
 import Spinner from '../layout/Spinner';
 
 class User extends Component {
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
+    this.props.getUserRepos(this.props.match.params.login);
   }
   render() {
     const {
@@ -22,10 +24,11 @@ class User extends Component {
       public_gists,
       hireable,
     } = this.props.user;
-    const { loading } = this.props.user;
+
+    const { loading, repos } = this.props;
 
     if (loading) {
-      <Spinner />;
+      return <Spinner />;
     } else {
       return (
         <Fragment>
@@ -94,6 +97,7 @@ class User extends Component {
               Public Repos : {public_repos}
             </div>
           </div>
+          <Repos repos={repos} />
         </Fragment>
       );
     }
